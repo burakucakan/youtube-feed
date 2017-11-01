@@ -1,0 +1,147 @@
+@import "~compass-mixins/lib/compass";
+
+@import "./theme.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+router-outlet { 
+    display: none;
+}
+
+html {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 3vw;
+    font-family: $font;
+    font-size: $appBodyDefaultFontSize;
+    background: $appBackground;
+    color: $appContentColor;
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+div {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+header {
+    height: $appHeaderHeight;
+}
+
+footer {
+    height: $appFooterHeight;
+}
+
+.module + * {
+    height: $appBodyHeight;
+}
+
+.movie-container {
+    width: 80vw;
+}
+
+.movie {
+    @include display-flex;
+    @include flex-direction(row);
+
+    margin: 2em 0;
+    min-height: 11em;
+
+    &:first-child {
+        margin: 0;
+    }
+
+    > figure {
+        margin-right: 2em;
+
+        a {
+            @include opacity(1);
+        }
+
+        a:hover {
+            @include opacity(0.7);
+        }
+    }
+
+    &__summary {
+        @include display-flex;
+        @include flex-direction(column);
+    }
+
+    &__title {
+        @include flex(1.6 0);
+
+        font-size: 1.5em;
+        color: #575353;
+        font-weight: bold;
+
+        &:hover {
+            color: rgb(153, 131, 131);
+        }
+    }
+
+    &__date {
+        @include flex(1 0);
+
+        color: #b8b8b8;
+        font-weight: bold;
+    }
+
+    &__description {
+        @include flex(4 0);
+
+        > p {
+            color: rgb(116, 107, 107);
+            line-height: 1.3em;
+            overflow: hidden;
+            display: inline-block;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+        }
+    }
+}
+
+.movies-paging {
+    text-align: center;
+
+    > a {
+        color: #0d4999;
+        text-decoration: underline;
+
+        &:hover {
+            color: #000;
+        }
+    }
+}
+
+.back-link {
+    font-size: .8em;
+    color: #8b8686;
+    margin: 0 0 2em;
+    display: inline-block;
+
+    &:hover {
+        color: #000;
+    }
+}
+
+@import "./styles.breakpoints.scss";

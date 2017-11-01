@@ -1,0 +1,9 @@
+<section class="movie-container">
+
+  <app-movie-item [movie]="movie" *ngFor="let movie of movieList"></app-movie-item>
+
+  <section class="movies-paging">
+    <a href="javascript:;" (click)="onPrevious()" *ngIf="this.prevPageToken !== ''">Previous</a>
+    <a href="javascript:;" (click)="onNext()" *ngIf="this.nextPageToken !== ''">Next</a>
+  </section>
+</section>
