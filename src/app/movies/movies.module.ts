@@ -7,6 +7,7 @@ import { MoviesDefaultComponent } from './movies-default/movies-default.componen
 import { MoviesDetailComponent } from './movies-detail/movies-detail.component';
 import { MoviesService } from './movies.service';
 import { MovieItemComponent } from './movie-item/movie-item.component';
+import { SecureUrlPipe } from '../security.pipe';
 
 @NgModule({
 	imports: [
@@ -17,7 +18,8 @@ import { MovieItemComponent } from './movie-item/movie-item.component';
 	declarations: [
 		MoviesDefaultComponent,
 		MoviesDetailComponent,
-		MovieItemComponent
+		MovieItemComponent,
+		SecureUrlPipe
 	],
 	exports: [
 		MovieItemComponent

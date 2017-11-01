@@ -54,6 +54,14 @@ footer {
     height: $appBodyHeight;
 }
 
+router-outlet + * {
+    display: block;
+}
+
+.module__movie + * {
+    width: 90%;
+}
+
 .movie-container {
     width: 80vw;
 }
@@ -81,9 +89,19 @@ footer {
         }
     }
 
+    &__thumbnail {
+
+    }
+
+    &__video {
+        @include display-flex;
+        @include flex(2 0);
+    }    
+
     &__summary {
         @include display-flex;
         @include flex-direction(column);
+        @include flex(1 0);
     }
 
     &__title {
@@ -133,10 +151,13 @@ footer {
     }
 }
 
+iframe.youtube__video {
+    margin-right: 2em;
+}
+
 .back-link {
     font-size: .8em;
     color: #8b8686;
-    margin: 0 0 2em;
     display: inline-block;
 
     &:hover {

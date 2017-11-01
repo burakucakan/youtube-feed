@@ -1,4 +1,11 @@
-<figure>
+<section class="movie__video" *ngIf="viewType === 'video'">
+
+  <iframe width="100%" height="315" id="ytplayer" class="youtube__video" type="text/html" [src]="getVideoUrl(movie.contentDetails.videoId) | secureUrl"
+    frameborder="0" allowfullscreen></iframe>
+
+</section>
+
+<figure class="movie__thumbnail" *ngIf="viewType === 'thumbnail'">
   <a [routerLink]="['/movies/detail', movie.id]">
     <img alt="" [src]="movie.snippet.thumbnails?.high.url" [attr.srcSet]="getSrcSet(movie.snippet.thumbnails?.medium.url, movie.snippet.thumbnails?.default.url)"
     />

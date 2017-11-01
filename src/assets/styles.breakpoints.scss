@@ -13,6 +13,9 @@
         height: $appHeaderHeightMobile;
     }
     
+    iframe.youtube__video {
+    margin-right: 2em;
+}
     footer {
         height: $appFooterHeightMobile;
     }
@@ -23,5 +26,9 @@
 
     .movie {
         @include flex-direction(column-reverse);
+    }
+
+    .youtube__video {
+        margin-top: 2em;
     }
 }
