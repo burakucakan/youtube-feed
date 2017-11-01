@@ -88,9 +88,9 @@ export interface IResourceId {
 	videoId: string;
 }
 
-
-
 export interface IMoviesService {
 	getMoviesList(): Observable<IMovies>;
 	getDetail(detailId: string): IMovieItem;
 }
+
+export type ViewType = 'thumbnail' | 'video';

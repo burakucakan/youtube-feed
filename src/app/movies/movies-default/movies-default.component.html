@@ -1,6 +1,6 @@
 <section class="movie-container">
 
-  <app-movie-item [movie]="movie" *ngFor="let movie of movieList"></app-movie-item>
+  <app-movie-item [movie]="movie" [viewType]="'thumbnail'" *ngFor="let movie of movieList"></app-movie-item>
 
   <section class="movies-paging">
     <a href="javascript:;" (click)="onPrevious()" *ngIf="this.prevPageToken !== ''">Previous</a>
