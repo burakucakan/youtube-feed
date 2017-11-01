@@ -1,0 +1,27 @@
+@media screen and (max-width: $break-big) {
+    body {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: $break-small) {
+    body {
+        font-size: 12px;
+    }
+    
+    header {
+        height: $appHeaderHeightMobile;
+    }
+    
+    footer {
+        height: $appFooterHeightMobile;
+    }
+    
+    .module + * {
+        height: $appBodyHeightMobile;
+    }
+
+    .movie {
+        @include flex-direction(column-reverse);
+    }
+}

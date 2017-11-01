@@ -1,0 +1,23 @@
+<figure>
+  <a [routerLink]="['/movies/detail', movie.id]">
+    <img alt="" [src]="movie.snippet.thumbnails?.high.url" [attr.srcSet]="getSrcSet(movie.snippet.thumbnails?.medium.url, movie.snippet.thumbnails?.default.url)"
+    />
+  </a>
+</figure>
+<section class="movie__summary">
+
+  <a [routerLink]="['/movies/detail', movie.id]" class="movie__title">
+    {{ movie.snippet.title }}
+  </a>
+
+  <span class="movie__date">
+    Published on {{ movie.snippet.publishedAt | date:'mediumDate'}}
+  </span>
+
+  <div class="movie__description">
+    <p>
+      {{ movie.snippet?.description }}
+    </p>
+  </div>
+
+</section>
